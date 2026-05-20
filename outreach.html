@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Science Communication / Outreach | Antoniu Fodor</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #5e42a6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 99999;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+
+            color: #f2f2f2;
+            text-align: center;
+
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+
+            margin-right: 8px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 7rem 2rem 5rem 2rem;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(20,14,31,0.9), rgba(20,14,31,0.96)),
+                url("images/stars.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto;
+
+            color: rgba(255,255,255,0.72);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           SECTION WRAPPER
+        ========================== */
+
+        .outreach-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            color: white;
+            font-size: 2.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: rgba(255,255,255,0.65);
+        }
+
+        /* =========================
+           CARD LAYOUT (like publications style)
+        ========================== */
+
+        .outreach-card {
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+
+            padding: 2rem;
+            margin-bottom: 2rem;
+
+            transition: transform 0.25s ease,
+                        background 0.25s ease,
+                        box-shadow 0.25s ease;
+        }
+
+        .outreach-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+        }
+
+        .outreach-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .outreach-meta {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .outreach-card p {
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        /* =========================
+           BUTTONS (matching your publication style)
+        ========================== */
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0.7rem 1.2rem;
+
+            background: #34343c;
+            color: white !important;
+
+            text-decoration: none;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+            border-radius: 0.55rem;
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition: transform 0.25s ease,
+                        background-color 0.25s ease,
+                        box-shadow 0.25s ease;
+        }
+
+        .btn:hover {
+            background: #4b3f72;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+
+        /* =========================
+           GRID (optional for media / highlights)
+        ========================== */
+
+        .outreach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .mini-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .mini-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .mini-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255,255,255,0.5);
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media screen and (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+
+            .btn-group {
+                justify-content: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="resume_and_cv.html">Resume/CV</a>
+        <a href="python_code.html">Python Work</a>
+        <a href="publications.html">Publications</a>
+        <a class="active" href="outreach.html">Outreach</a>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Science Communication</h1>
+
+        <p>
+            Working on science is a collaboritive effort of many communities. For this reason, outreach and communication is an integral part of my research. By engaging the public, we build understanding for the broader scientific ecosystem which relies on public investment. Outreach is an extension of research and mentorship, particularly for students and early-career scientists navigating scientific pathways. As a student, participating in my high school's Science Olympiad team made me want to pursue physics going forward. 
+        </p>
+
+    </section>
+
+    <!-- MAIN SECTION -->
+
+    <section class="outreach-section">
+
+        <!-- CARD 1 -->
+
+        <div class="outreach-card">
+
+            <h3>Solar Eclipse Viewing</h3>
+
+            <div class="outreach-meta">
+                University of Toledo | 2024
+            </div>
+
+            <p>
+                Helped organize and run a campus-wide public viewing event for the 2024 total solar eclipse, which reached 100% totality in our area. Worked with faculty and other graduate students on event coordination, public engagement, and on-site activities while also answering astronomy questions for attendees throughout the eclipse.
+            </p>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="outreach-card">
+
+            <h3>LDT Decadal Public Talk Series</h3>
+
+            <div class="outreach-meta">
+                University of Toledo | 2023
+            </div>
+
+            <p>
+                Presented an online public talk as part of a series celebrating a decade of scientific observations with the Lowell Discovery Telescope. Discussed and answered questions on my research of shocked post-starburst galaxies, highlighting my observing campaign with the telescope.
+            </p>
+            <div class="btn-group">
+                <a href="https://www.youtube.com/watch?v=xefFainvNS0&list=PLLF0PPpY9DpK4onrllF6ULsWgVpqN9S6L&index=13"
+                    class="btn"
+                    target="_blank">
+                    View Talk
+                </a>
+            </div>
+
+        </div>
+
+        <div class="outreach-card">
+
+            <h3>Cedar Point’s Physics, Science, and Math Days Outreach </h3>
+
+            <div class="outreach-meta">
+                Cedar Point | 2023
+            </div>
+
+            <p>
+                Helped organize my university’s participation in Cedar Point’s Physics and Math Days, supporting outreach demonstrations designed to make physics accessible and engaging for visitors through hands-on activities and discussion.
+            </p>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="outreach-card">
+
+            <h3>Solar Eclipse Viewing</h3>
+
+            <div class="outreach-meta">
+                Albion College | 2017
+            </div>
+
+            <p>
+                Helped organize a public viewing event for the 2017 solar eclipse in collaboration with the Albion College Astronomy Club. Assisted with distributing eclipse glasses, operating solar-filtered telescopes for safe solar viewing, and showing attendees sunspots visible on the Sun before and after the eclipse.
+            </p>
+
+            <div class="btn-group">
+                <a href="https://www.albion.edu/news-article/college-viewing-hopes-to-shed-light-on-solar-eclipse/"
+                    class="btn"
+                    target="_blank">
+                    Read Article
+                </a>
+            </div>
+
+        </div>
+
+        
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Antoniu Fodor
+        </p>
+
+    </footer>
+
+</body>
+</html>

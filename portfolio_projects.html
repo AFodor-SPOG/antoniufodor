@@ -1,0 +1,635 @@
+<!DOCTYPE HTML>
+<!--
+    Publications Page
+    Adapted from Hyperspace by HTML5 UP
+-->
+<html lang="en">
+
+<head>
+    <title>Data Analyst Portfolio | Antoniu Fodor</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="Antoniu Fodor, astronomy, astrophysics, publications" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #5e42a6;
+            color: rgba(255,255,255,0.05);
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99999;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+
+            color: #f2f2f2;
+            text-align: center;
+
+            padding: 14px 16px;
+
+            text-decoration: none;
+            font-size: 17px;
+
+            margin-right: 8px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 6rem 2rem 5rem 2rem;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(20, 14, 31, 0.9), rgba(20, 14, 31, 0.96)),
+                url("images/stars.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            color: white;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           SECTION STYLING
+        ========================== */
+
+        .pub-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: white;
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: rgba(255,255,255,0.65);
+            margin: 0;
+        }
+
+        /* =========================
+           FEATURED GRID
+        ========================== */
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .featured-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 1rem;
+            overflow: hidden;
+
+            border: 1px solid rgba(255,255,255,0.05);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.35);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .featured-content {
+            padding: 1.6rem;
+        }
+
+        .paper-tag {
+            display: inline-block;
+
+            background: rgba(255,255,255,0.08);
+
+            color: rgba(255,255,255,0.76);
+
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+
+            margin-bottom: 1rem;
+        }
+
+        .featured-content h3 {
+            color: white;
+            margin-bottom: 0.9rem;
+            line-height: 1.35;
+            font-size: 1.35rem;
+        }
+
+        .featured-content p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.4rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           YEAR DIVIDER
+        ========================== */
+
+        .year-divider {
+            margin: 4rem 0 2rem 0;
+
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .year-divider::before,
+        .year-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .year-divider span {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        /* =========================
+           PUBLICATION CARD
+        ========================== */
+
+        .publication {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+
+            border-radius: 1rem;
+
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .publication:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .pub-image {
+            flex-shrink: 0;
+        }
+
+        .pub-image img {
+            width: 220px;
+            border-radius: 0.75rem;
+            display: block;
+        }
+
+        .pub-details {
+            flex: 1;
+        }
+
+        .pub-title {
+            color: white;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            margin-top: 0;
+            margin-bottom: 0.7rem;
+        }
+
+        .pub-authors {
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-journal {
+            color: rgba(255,255,255,0.55);
+            font-style: italic;
+            margin-bottom: 1.3rem;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .pub-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .pub-links .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 90px;
+            padding: 0.7rem 1.2rem;
+
+            background: #34343c;
+            color: white !important;
+
+            text-decoration: none;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+            border-radius: 0.55rem;
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .pub-links .btn:hover {
+            background: #4b3f72;
+            border-color: rgba(255,255,255,0.14);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255,255,255,0.5);
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+
+            margin-top: 5rem;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media screen and (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .publication {
+                flex-direction: column;
+            }
+
+            .pub-image img {
+                width: 100%;
+            }
+
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+
+            .pub-links {
+                justify-content: center;
+            }
+
+            .pub-title,
+            .pub-authors,
+            .pub-journal {
+                text-align: center;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <!-- NAVBAR -->
+
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="resume_and_cv.html">Resume/CV</a>
+        <a href="python_code.html">Python Work</a>
+        <a class="active" href="portfolio_projects.html">Analyst Portfolio</a>
+        <a href="publications.html">Publications</a>
+        <a href="outreach.html">Outreach</a>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <h1>Data Analyst Portfolio</h1>
+
+        <p>
+            I am currently working on some portfolio projects using business datasets to create dashboards and reports with Power BI. These will be posed here once done.
+        </p>
+    </section>
+
+    <!-- FEATURED RESEARCH -->
+
+    <section class="pub-section">
+
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>This section is a work in progress.</p>
+        </div>
+
+        <div class="featured-grid">
+
+            <!-- CARD -->
+
+            <div class="featured-card">
+
+                <img src="images/pub/example1.jpg" alt="" />
+
+                <div class="featured-content">
+
+                    <span class="paper-tag">
+                        Data Report
+                    </span>
+
+                    <h3>
+                        Example 1
+                    </h3>
+
+                    <p>
+                        Short description of the project or paper.
+                        You can summarize the major result or significance here.
+                    </p>
+
+                    <div class="pub-links">
+                        <a href="#" class="btn">ADS</a>
+                        <a href="#" class="btn">PDF</a>
+                        <a href="#" class="btn">arXiv</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div class="featured-card">
+
+                <img src="images/pub/example2.jpg" alt="" />
+
+                <div class="featured-content">
+
+                    <span class="paper-tag">
+                        Simulations
+                    </span>
+
+                    <h3>
+                        Example Cosmology Simulation Project
+                    </h3>
+
+                    <p>
+                        Another example featured publication card.
+                        Replace with your own highlighted work.
+                    </p>
+
+                    <div class="pub-links">
+                        <a href="#" class="btn">ADS</a>
+                        <a href="#" class="btn">PDF</a>
+                        <a href="#" class="btn">DOI</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PUBLICATIONS -->
+
+    <section class="pub-section">
+
+        <div class="section-header">
+            <h2>All Publications</h2>
+            <p>Reverse chronological order</p>
+        </div>
+
+        <!-- YEAR -->
+
+        <div class="year-divider">
+            <span>2026</span>
+        </div>
+
+        <!-- PUBLICATION -->
+
+        <div class="publication">
+
+            <div class="pub-image">
+                <img src="images/pub/example-paper.jpg" alt="" />
+            </div>
+
+            <div class="pub-details">
+
+                <h3 class="pub-title">
+                    Example Publication About Star Formation
+                </h3>
+
+                <p class="pub-authors">
+                    <strong>Antoniu Fodor</strong>,
+                    Collaborator A.,
+                    Collaborator B.
+                </p>
+
+                <p class="pub-journal">
+                    Astrophysical Journal, 2026
+                </p>
+
+                <div class="pub-links">
+                    <a href="#" class="btn">ADS</a>
+                    <a href="#" class="btn">PDF</a>
+                    <a href="#" class="btn">DOI</a>
+                    <a href="#" class="btn">arXiv</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PUBLICATION -->
+
+        <div class="publication">
+
+            <div class="pub-image">
+                <img src="images/pub/example-paper2.jpg" alt="" />
+            </div>
+
+            <div class="pub-details">
+
+                <h3 class="pub-title">
+                    Example High-Redshift Galaxy Survey
+                </h3>
+
+                <p class="pub-authors">
+                    <strong>Antoniu Fodor</strong>,
+                    Research Group
+                </p>
+
+                <p class="pub-journal">
+                    Monthly Notices of the Royal Astronomical Society, 2026
+                </p>
+
+                <div class="pub-links">
+                    <a href="#" class="btn">ADS</a>
+                    <a href="#" class="btn">PDF</a>
+                    <a href="#" class="btn">arXiv</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- YEAR -->
+
+        <div class="year-divider">
+            <span>2025</span>
+        </div>
+
+        <!-- PUBLICATION -->
+
+        <div class="publication">
+
+            <div class="pub-image">
+                <img src="images/pub/example-paper3.jpg" alt="" />
+            </div>
+
+            <div class="pub-details">
+
+                <h3 class="pub-title">
+                    Earlier Example Publication
+                </h3>
+
+                <p class="pub-authors">
+                    <strong>Antoniu Fodor</strong>,
+                    Collaborator Names
+                </p>
+
+                <p class="pub-journal">
+                    Example Journal, 2025
+                </p>
+
+                <div class="pub-links">
+                    <a href="#" class="btn">ADS</a>
+                    <a href="#" class="btn">PDF</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Antoniu Fodor |
+            Design adapted from HTML5 UP
+        </p>
+
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

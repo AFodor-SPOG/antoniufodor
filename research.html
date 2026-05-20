@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Research | Antoniu Fodor</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #5e42a6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 99999;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+
+            color: #f2f2f2;
+            text-align: center;
+
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+
+            margin-right: 8px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* =========================
+           HERO (MATCHES CV STYLE)
+        ========================== */
+
+        .hero {
+            padding: 7rem 2rem 5rem 2rem;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(20,14,31,0.9), rgba(20,14,31,0.96)),
+                url("images/stars.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto;
+
+            color: rgba(255,255,255,0.72);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           SECTION LAYOUT
+        ========================== */
+
+        .research-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            color: white;
+            font-size: 2.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: rgba(255,255,255,0.65);
+        }
+
+        /* =========================
+           TOC CARD
+        ========================== */
+
+        .toc-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+
+            padding: 2rem;
+            margin-bottom: 3rem;
+
+            transition: 0.25s ease;
+        }
+
+        .toc-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .toc-card h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .toc-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+        .toc-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-card a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+        }
+
+        .toc-card a:hover {
+            color: white;
+        }
+
+        /* =========================
+           RESEARCH CARDS
+        ========================== */
+
+        .research-card {
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+
+            padding: 2rem;
+            margin-bottom: 2rem;
+
+            transition: all 0.25s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+        }
+
+        .research-card h3 {
+            color: white;
+            margin-bottom: 0.6rem;
+            font-size: 1.4rem;
+        }
+
+        .research-card p {
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+        }
+
+        /* =========================
+           PUBLICATIONS LIST
+        ========================== */
+
+        .pub-list {
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+        }
+
+        .pub-list li {
+            margin-bottom: 0.6rem;
+        }
+        .pub-entry {
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .pub-links {
+            margin-top: 0.5rem;
+        }
+        .pub-entry {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .pub-links .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 90px;
+            padding: 0.7rem 1.2rem;
+
+            background: #34343c;
+            color: white !important;
+
+            text-decoration: none;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+            border-radius: 0.55rem;
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+
+            color: rgba(255,255,255,0.5);
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media screen and (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a class="active" href="research.html">Research</a>
+        <a href="resume_and_cv.html">Resume/CV</a>
+        <a href="python_code.html">Python Work</a>
+        <a href="publications.html">Publications</a>
+        <a href="outreach.html">Outreach</a>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <h1>Research</h1>
+
+        <p>
+            My research focuses on galaxy evolution, including shocked post-starburst galaxies (SPOGs),
+            gas kinematics, and the physical processes driving transitions in galaxy populations.
+        </p>
+    </section>
+
+    <!-- CONTENT -->
+
+    <section class="research-section">
+
+        <!-- TABLE OF CONTENTS -->
+
+        <div class="toc-card">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#spogs">What are <a href="https://spogs.org/">SPOGs</a>?</a></li>
+                <li><a href="#ldt">LDT Observing Campaign</a></li>
+                <li><a href="#outflows">Outflows & Kinematics</a></li>
+                <li><a href="#publications">Highlighted Publications</a></li>
+            </ul>
+        </div>
+
+        <!-- SECTION 1 -->
+
+        <div id="spogs" class="research-card">
+            <h3>What are <a href="https://spogs.org/">SPOGs</a>?</h3>
+            <p>
+                When we look at galaxies, we notice that there are two main populations: blue spiral galaxies and red ellipticals. Over the past 6 Gyr, the mass of galaxies in the blue cloud has not changed while the mass of galaxies in the red ellipiticals had doubled. This suggests that over time, blue spirals evolve into red ellipticals. Galaxy evolution, in part, is trying to answer what mechanisms causes that change to occur. 
+            </p>
+            <p>
+                In classic cases, to study physical mechanisms that might cause galaxies to evolve, post-starburst galaxies have been studied. These are galaxies that in last 1 Gyr had a large starburst event before star formation stopped. Some mechanism (or combination of mechanisms) must be keeping star formation from occurring either by heating the gas or removing it from the galaxy.
+            </p>
+            <p>
+                Unlike most post-starburst samples, Shocked POst-starburst Galaxies (<a href="https://spogs.org/">SPOGs</a>) select for galaxies that had a recent starburst but that also could have ongoing energetic mechanisms. These type of galaxies are selected out in older surveys, but might be key to tracing mechanisms causing quenching (star formation stoppping) at earlier time periods.
+            </p>
+        </div>
+        <div class="research-image">
+            <img src="images/spogs.png" alt="SPOGs" />
+        </div>
+
+        <!-- SECTION 2 -->
+
+        <div id="ldt" class="research-card">
+            <h3>LDT Observing Campaign</h3>
+            <p>
+                My research is to address three main questions related to the SPOGs sample of galaxies:
+                <li> Do SPOGs host outflows? If so, do they successfully remove enough gas from their host galaxies to be relevant quenching mechanisms? </li>
+                <li>Are stellar populations in SPOGs changing? Do they host ionized gas capable of condensing down to form stars?</li>
+                <li>Is the gas affected by outflows, AGN-, or SF feedback?</li>
+            </p>
+        </div>
+         <div class="research-image">
+            <img src="images/ldt_photo.png" alt="LDT Photo" />
+        </div> 
+
+        <!-- SECTION 3 -->
+
+        <div id="outflows" class="research-card">
+            <h3>Outflows & Kinematics</h3>
+            <p>
+            We present long-slit spectroscopy from the LDT for a sample of 77 shocked post-starburst galaxies to search for evidence of outflows. To do so, we look for extraplanar ionized gas along the minor axis of each target observed with a signal-to-noise greaterthan 3 out past the edges of the galactic continuum. Our conclusions are the following:
+            
+            <li>We detect extraplanar ionized gas in 31 targets (40%) from our sample.</li>
+
+            <li>We estimate the mass entrained in the extraplanar gas using Hα luminosity. The total mass in individual outflows is very small in the ionized gas phase.</li>
+
+            <li>For the SPOGs population with a central active galactic nuceli (AGN), outflows are common and might be tied to the central AGN.</li>
+            </p>
+        </div>
+         <div class="research-image">
+            <img src="images/observing_angle.png" alt="Observing" />
+        </div>
+         <div class="research-image">
+            <img src="images/spogs_obs.png" alt="Long-slit spectroscopy of SPOGs" />
+        </div>
+
+        <!-- PUBLICATIONS -->
+
+        <div id="publications" class="research-card">
+    <div id="publications" class="research-card">
+    <h3>Highlighted Papers on SPOGs</h3>
+
+    <ul class="pub-list">
+
+        <li class="pub-entry">
+            <span class="pub-text">
+                Alatalo et al. (2016a), The Astrophysical Journal Supplemental Series
+            </span>
+
+            <div class="pub-links">
+                <a href="https://ui.adsabs.harvard.edu/..." class="btn" target="_blank">
+                    ADS
+                </a>
+            </div>
+        </li>
+
+        <li class="pub-entry">
+            <span class="pub-text">
+                Alatalo et al. (2016b), The Astrophysical Journal
+            </span>
+
+            <div class="pub-links">
+                <a href="https://ui.adsabs.harvard.edu/..." class="btn" target="_blank">
+                    ADS
+                </a>
+            </div>
+        </li>
+
+        <li class="pub-entry">
+            <span class="pub-text">
+                Ardila et al. (2018), The Astrophysical Journal
+            </span>
+
+            <div class="pub-links">
+                <a href="https://ui.adsabs.harvard.edu/..." class="btn" target="_blank">
+                    ADS
+                </a>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>&copy; 2026 Antoniu Fodor | Design adapted from HTML5 UP</p>
+    </footer>
+
+</body>
+</html>

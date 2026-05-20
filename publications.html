@@ -1,0 +1,879 @@
+<!DOCTYPE HTML>
+<!--
+    Publications Page
+    Adapted from Hyperspace by HTML5 UP
+-->
+<html lang="en">
+
+<head>
+    <title>Publications | Antoniu Fodor</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="Antoniu Fodor, astronomy, astrophysics, publications" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #5e42a6;
+            color: rgba(255,255,255,0.05);
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99999;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+
+            color: #f2f2f2;
+            text-align: center;
+
+            padding: 14px 16px;
+
+            text-decoration: none;
+            font-size: 17px;
+
+            margin-right: 8px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 6rem 2rem 5rem 2rem;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(20, 14, 31, 0.9), rgba(20, 14, 31, 0.96)),
+                url("images/stars.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            color: white;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           SECTION STYLING
+        ========================== */
+
+        .pub-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: white;
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: rgba(255,255,255,0.65);
+            margin: 0;
+        }
+
+        /* =========================
+           FEATURED GRID
+        ========================== */
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .featured-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 1rem;
+            overflow: hidden;
+
+            border: 1px solid rgba(255,255,255,0.05);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.35);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .featured-content {
+            padding: 1.6rem;
+        }
+
+        .paper-tag {
+            display: inline-block;
+
+            background: rgba(255,255,255,0.08);
+
+            color: rgba(255,255,255,0.76);
+
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+
+            margin-bottom: 1rem;
+        }
+
+        .featured-content h3 {
+            color: white;
+            margin-bottom: 0.9rem;
+            line-height: 1.35;
+            font-size: 1.35rem;
+        }
+
+        .featured-content p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.4rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           YEAR DIVIDER
+        ========================== */
+
+        .year-divider {
+            margin: 4rem 0 2rem 0;
+
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .year-divider::before,
+        .year-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .year-divider span {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        /* =========================
+           PUBLICATION CARD
+        ========================== */
+
+        .publication {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+
+            border-radius: 1rem;
+
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .publication:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .pub-image {
+            flex-shrink: 0;
+        }
+
+        .pub-image img {
+            width: 220px;
+            border-radius: 0.75rem;
+            display: block;
+        }
+
+        .pub-details {
+            flex: 1;
+        }
+
+        .pub-title {
+            color: white;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            margin-top: 0;
+            margin-bottom: 0.7rem;
+        }
+
+        .pub-authors {
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-journal {
+            color: rgba(255,255,255,0.55);
+            font-style: italic;
+            margin-bottom: 1.3rem;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .pub-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .pub-links .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 90px;
+            padding: 0.7rem 1.2rem;
+
+            background: #34343c;
+            color: white !important;
+
+            text-decoration: none;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+            border-radius: 0.55rem;
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .pub-links .btn:hover {
+            background: #4b3f72;
+            border-color: rgba(255,255,255,0.14);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255,255,255,0.5);
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+
+            margin-top: 5rem;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media screen and (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .publication {
+                flex-direction: column;
+            }
+
+            .pub-image img {
+                width: 100%;
+            }
+
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+
+            .pub-links {
+                justify-content: center;
+            }
+
+            .pub-title,
+            .pub-authors,
+            .pub-journal {
+                text-align: center;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <!-- NAVBAR -->
+
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="resume_and_cv.html">Resume/CV</a>
+        <a href="python_code.html">Python Work</a>
+        <a class="active" href="publications.html">Publications</a>
+        <a href="outreach.html">Outreach</a>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <h1>Publications and Presentations</h1>
+
+        <p>
+            Research papers, conference presentations, and astronomy talks.
+        </p>
+    </section>
+
+    <!-- PUBLICATIONS -->
+
+    <section class="pub-section">
+
+
+        <!-- YEAR -->
+
+       <div class="section-header">
+            <h2>Published Papers</h2>
+        </div>
+        <div class="year-divider">
+            <span>2025</span>
+        </div>
+
+        <!-- PUBLICATION -->
+
+        <div class="publication">
+
+            <div class="pub-image">
+                <img src="images/spogs_bpt.png" alt="" />
+            </div>
+
+            <div class="pub-details">
+
+                <h3 class="pub-title">
+                    Shocked POststarburst Galaxy Survey. IV. Outflows in Shocked Poststarburst Galaxies Are Not Responsible for Quenching
+                </h3>
+
+                <p class="pub-authors">
+                    <strong>Antoniu Fodor</strong>,
+                    Taylor Tomko, 
+                    Mary Braun, 
+                    Anne M. Medling , 
+                    Thomas M. Johnson, 
+                    Alexander Thompson,
+                    Victor D. Johnston, 
+                    Matthew Newhouse, 
+                    Yuanze Luo, 
+                    K. Decker French, 
+                    Justin A. Otter, 
+                    Akshat Tripathi,
+                    Margaret E. Verrico, 
+                    Katherine Alatalo, 
+                    Kate Rowlands, 
+                    and Timothy Heckman
+                </p>
+
+                <p class="pub-journal">
+                    The Astrophysical Journal, 2025
+                </p>
+
+                <div class="pub-links">
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...979...94F/abstract" class="btn">ADS</a>
+                    <a href="files/fodor_paper_spogs.pdf" class="btn">PDF</a>
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad900f" class="btn">DOI</a>
+                    <a href="https://arxiv.org/abs/2412.06621" class="btn">arXiv</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+   <!-- =========================
+     CONFERENCE PRESENTATIONS
+========================== -->
+
+<section class="pub-section">
+
+    <div class="section-header">
+        <h2>Conference Presentations</h2>
+    </div>
+
+    <!-- YEAR -->
+
+    <div class="year-divider">
+        <span>2026</span>
+    </div>
+
+    <!-- PRESENTATION -->
+
+    <div class="publication">
+
+        <div class="pub-image">
+            <img src="images/end_of_sf.png" alt="" />
+        </div>
+
+        <div class="pub-details">
+
+            <h3 class="pub-title">
+                These Outflows are (Not) the Quenching Mechanisms You're Looking For
+            </h3>
+
+            <p class="pub-authors">
+                <strong> Fodor, A. </strong>, Medling, A. M.
+            </p>
+
+            <p class="pub-journal">
+                The End of Star Formation Conference, Mar. 2026
+            </p>
+
+            <div class="pub-links">
+
+                <a href="files/end_of_sf_talk.pdf"
+                   class="btn"
+                   target="_blank">
+                   Talk Slides
+                </a>
+
+                <a href="https://sites.google.com/view/endofsfpuertovaras/home"
+                   class="btn"
+                   target="_blank">
+                   Conference Abstract
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="year-divider">
+        <span>2025</span>
+    </div>
+    <!-- PRESENTATION -->
+
+    <div class="publication">
+
+        <div class="pub-image">
+            <img src="images/talk_aas_245.png" alt="" />
+        </div>
+
+        <div class="pub-details">
+
+            <h3 class="pub-title">
+                A Minor (and Major) Search for Quenching: Optical Long-slit Spectroscopy of Shocked POst-starburst Galaxies 
+            </h3>
+
+            <p class="pub-authors">
+                <strong> Fodor, A. </strong>; Medling, A.; Tomko, T; Braun, M.; Newhouse, M.; Johnson, T.; Thompson, A.; The SPOGs Team
+            </p>
+
+            <p class="pub-journal">
+                American Astronomical Society Meeting #245, Jan. 2025
+            </p>
+
+            <div class="pub-links">
+
+                <a href="https://ui.adsabs.harvard.edu/abs/2025AAS...24513005F/abstract"
+                   class="btn"
+                   target="_blank">
+                   ADS
+                </a>
+
+                <a href="https://aas.org/meetings/aas245"
+                   class="btn"
+                   target="_blank">
+                   Conference Abstract
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    <div class="year-divider">
+        <span>2024</span>
+    </div>
+    
+    <!-- PRESENTATION -->
+
+    <div class="publication">
+
+        <div class="pub-image">
+            <img src="images/uiuc_talk.png" alt="" />
+        </div>
+
+        <div class="pub-details">
+
+            <h3 class="pub-title">
+                 The Shocked POststarburst Galaxy Survey: Outflows in Shocked Post-Starburst Galaxies Are Not Responsible For Quenching  
+            </h3>
+
+            <p class="pub-authors">
+                <strong> Fodor, A. </strong>; Medling, A.; The SPOGs Team
+            </p>
+
+            <p class="pub-journal">
+                UIUC - Cardiff Galaxy Meeting, Jul. 2024
+            </p>
+
+            <div class="pub-links">
+
+                <a href="https://aas.org/meetings/aas243"
+                   class="btn"
+                   target="_blank">
+                   Conference Abstract
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PRESENTATION -->
+
+    <div class="publication">
+
+        <div class="pub-image">
+            <img src="images/iposter_aas_243.png" alt="" />
+        </div>
+
+        <div class="pub-details">
+
+            <h3 class="pub-title">
+                 Looking for Triggers in the Most Recently-Quenched Galaxies  
+            </h3>
+
+            <p class="pub-authors">
+                <strong> Fodor, A. </strong>; Medling, A.; The SPOGs Team
+            </p>
+
+            <p class="pub-journal">
+                American Astronomical Society Meeting #243, Jan. 2024
+            </p>
+
+            <div class="pub-links">
+
+                <a href="https://aas242-aas.ipostersessions.com/?s=C2-4A-A4-F9-84-44-81-0B-A2-EA-42-A9-1A-30-BA-BA"
+                   class="btn"
+                   target="_blank">
+                   iPoster
+                </a>
+
+                <a href="https://ui.adsabs.harvard.edu/abs/2024AAS...24330606F/abstract"
+                   class="btn"
+                   target="_blank">
+                   ADS
+                </a>
+
+                <a href="https://aas.org/meetings/aas243"
+                   class="btn"
+                   target="_blank">
+                   Conference Abstract
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRESENTATION -->
+
+    <div class="publication">
+
+        <div class="pub-image">
+            <img src="images/iposter_aas_243_braun.png" alt="" />
+        </div>
+
+        <div class="pub-details">
+
+            <h3 class="pub-title">
+                 Testing Inside-Out Quenching: Mapping Star Formation in AGN Shutting It Down  
+            </h3>
+
+            <p class="pub-authors">
+                Braun, M.; <strong> Fodor, A. </strong>; Medling, A.; Tomko, T.; The SPOGs Team
+            </p>
+
+            <p class="pub-journal">
+                American Astronomical Society Meeting #243, Jan. 2024
+            </p>
+
+            <div class="pub-links">
+
+                <a href="https://ui.adsabs.harvard.edu/abs/2024AAS...24330619B/abstract"
+                   class="btn"
+                   target="_blank">
+                   ADS
+                </a>
+
+                <a href="https://aas.org/meetings/aas243"
+                   class="btn"
+                   target="_blank">
+                   Conference Abstract
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="year-divider">
+        <span>2022</span>
+    </div>
+    <!-- PRESENTATION -->
+
+    <div class="publication">
+
+        <div class="pub-image">
+            <img src="images/iposter_aas_240.png" alt="" />
+        </div>
+
+        <div class="pub-details">
+
+            <h3 class="pub-title">
+                Optical Spectroscopy of Shocked Post-Starburst Galaxies in Search of Outflow and Quenching Signatures 
+            </h3>
+
+            <p class="pub-authors">
+                <strong> Fodor, A. </strong>; Medling, A.; The SPOGs Team
+            </p>
+
+            <p class="pub-journal">
+                American Astronomical Society Meeting #240, Jun. 2022
+            </p>
+
+            <div class="pub-links">
+
+                <a href="https://ui.adsabs.harvard.edu/abs/2022AAS...24021306F/abstract"
+                   class="btn"
+                   target="_blank">
+                   ADS
+                </a>
+
+                <a href="https://aas.org/meetings/aas240"
+                   class="btn"
+                   target="_blank">
+                   Conference Abstract
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="year-divider">
+        <span>2021</span>
+    </div>
+    <!-- PRESENTATION -->
+
+    <div class="publication">
+
+        <div class="pub-image">
+            <img src="images/iposter_aas_237.png" alt="" />
+        </div>
+
+        <div class="pub-details">
+
+            <h3 class="pub-title">
+                Shocked Poststarburst Galaxies: Searching for Outflows to Explain Quenching 
+            </h3>
+
+            <p class="pub-authors">
+                <strong> Fodor, A. </strong>; Johnston, V.; Johnson, T.; Thompson, A; Newhouse, M.; The SPOGs Team
+            </p>
+
+            <p class="pub-journal">
+                American Astronomical Society Meeting #237, Jan. 2021
+            </p>
+
+            <div class="pub-links">
+
+                <a href="https://aas237-aas.ipostersessions.com/?s=26-5C-02-D4-0B-47-65-93-19-06-BB-F7-60-2D-68-2E"
+                   class="btn"
+                   target="_blank">
+                   iPoster
+                </a>
+                <a href="https://ui.adsabs.harvard.edu/abs/2021AAS...23734102F/abstract"
+                   class="btn"
+                   target="_blank">
+                   ADS
+                </a>
+
+                <a href="https://aas.org/meetings/aas237"
+                   class="btn"
+                   target="_blank">
+                   Conference Abstract
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="pub-section">
+
+    <div class="section-header">
+        <h2>Astronomy Bag Lunch Presentations</h2>
+    </div>
+
+    <!-- YEAR -->
+
+    <div class="year-divider">
+        <span>2025</span>
+    </div>
+
+    <!-- PRESENTATION -->
+
+    <div class="publication">
+
+        <div class="pub-image">
+            <img src="images/bag_lunch_2019.png" alt="" />
+        </div>
+
+        <div class="pub-details">
+
+            <h3 class="pub-title">
+                Current Work in Progress
+            </h3>
+
+            <p class="pub-authors">
+                <strong> Fodor, A. </strong>
+            </p>
+
+            <p class="pub-journal">
+                Bag Lunch, Spring 2019
+            </p>
+
+            <div class="pub-links">
+
+            </div>
+
+        </div>
+
+    </div>
+     <div class="year-divider">
+        <span>2019</span>
+    </div>
+
+    
+
+</section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Antoniu Fodor |
+            Design adapted from HTML5 UP
+        </p>
+
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

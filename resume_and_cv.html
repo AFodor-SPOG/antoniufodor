@@ -1,0 +1,485 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>CV / Resume | Antoniu Fodor</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #5e42a6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 99999;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+
+            color: #f2f2f2;
+            text-align: center;
+
+            padding: 14px 16px;
+
+            text-decoration: none;
+            font-size: 17px;
+
+            margin-right: 8px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 7rem 2rem 5rem 2rem;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(20,14,31,0.9), rgba(20,14,31,0.96)),
+                url("images/stars.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+
+            color: rgba(255,255,255,0.72);
+
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 170px;
+
+            padding: 0.9rem 1.4rem;
+
+            background: #34343c;
+            color: white !important;
+
+            text-decoration: none;
+
+            border-radius: 0.6rem;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .btn:hover {
+            background: #4b3f72;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+        }
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        .cv-section {
+            max-width: 1100px;
+            margin: 0 auto;
+
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            color: white;
+            font-size: 2.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: rgba(255,255,255,0.65);
+        }
+
+        /* =========================
+           CARDS
+        ========================== */
+
+        .cv-card {
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            border-radius: 1rem;
+
+            padding: 2rem;
+
+            margin-bottom: 2rem;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .cv-card:hover {
+            transform: translateY(-4px);
+
+            background: rgba(255,255,255,0.05);
+
+            box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+        }
+
+        .cv-card h3 {
+            color: white;
+            margin-bottom: 0.4rem;
+
+            font-size: 1.4rem;
+        }
+
+        .cv-meta {
+            color: rgba(255,255,255,0.65);
+
+            margin-bottom: 1rem;
+
+            font-size: 0.95rem;
+        }
+
+        .cv-card p,
+        .cv-card li {
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+        }
+
+        .cv-card ul {
+            margin-top: 1rem;
+        }
+
+        /* =========================
+           SKILLS GRID
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-box {
+            background: rgba(255,255,255,0.04);
+
+            border-radius: 1rem;
+
+            padding: 1.5rem;
+
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .skill-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .skill-box p {
+            color: rgba(255,255,255,0.72);
+            line-height: 1.8;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+
+            padding: 3rem 2rem;
+
+            color: rgba(255,255,255,0.5);
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media screen and (max-width: 768px) {
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .topnav a {
+                float: none;
+                width: 100%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body class="is-preload">
+
+    <!-- NAVBAR -->
+
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a class="active" href="resume_and_cv.html">Resume/CV</a>
+        <a href="python_code.html">Python Work</a>
+        <a href="publications.html">Publications</a>
+        <a href="outreach.html">Outreach</a>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>CV / Resume</h1>
+
+        <div class="hero-buttons">
+            <a href="files/cv.pdf" class="btn">
+                Download CV
+            </a>
+
+            <a href="files/fodor_resume.pdf" class="btn">
+                Download Resume
+            </a>
+        </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section class="cv-section">
+
+        <div class="section-title">
+            <h2>Education</h2>
+        </div>
+
+        <div class="cv-card">
+
+            <h3>University of Toledo</h3>
+
+            <div class="cv-meta">
+                Ph.D. in Physics | 2018 - 2025
+            </div>
+
+            <p>
+                I earned my PhD from the University of Toledo in August 2025. My dissertation was entitled "Major and Minor Pathways of Evolution: Suppressing Star Formation in Nearby Galaxies". 
+            </p>
+            <p>
+            This work included: 
+            <ul>
+                <li>Observational studies of post-starburst galaxies at low redshift using the DeVeny Spectrograph on the Lowell Discovery Telescope</li>
+                <li>Building a data reduction pipeline to clean the large collected sample of galaxies</li>
+                <li>Identifying outflows in PSB galaxies using long-slit optical spectroscopy</li>
+            </ul>
+            </p>
+            <p>
+                My PhD work has resulted in one peer-reviewed publication to date.
+            </p>
+
+        </div>
+
+        <div class="cv-card">
+
+            <h3>Albion College</h3>
+
+            <div class="cv-meta">
+                B.A. in Physics & Mathematics | 2014 - 2018
+            </div>
+
+            <p>
+                Undergraduate research in particle physics. Performed laboratory experiments to study low-energy charge exchange using the Ion-Atom Merged Beams Apparatus, including systematic troubleshooting and hands-on realignment of the beamline.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section class="cv-section">
+
+        <div class="section-title">
+            <h2>Past Positions</h2>
+        </div>
+
+        <div class="cv-card">
+
+            <h3>Graduate Researcher</h3>
+
+            <div class="cv-meta">
+                University of Toledo | 2018-2026
+            </div>
+
+            <ul>
+                <li>Built and optimized Python data pipelines processing 600+ files across 100+ systems, resolving error propagation issues and validating results against benchmark datasets, enabling adoption across the research program portfolio.</li>
+                <li>Identified systematic data quality issues in observational instrumentation through root cause analysis, directly informing the development of improved data cleaning process workflows by telescope staff.</li>
+                <li>Conducted statistical analysis to identify primary drivers of system behavior across 100+ systems using Pearson correlation (r = 0.85), leading to a first-author publication.</li>
+                <li>Managed 8 undergraduate researchers through weekly check-ins, coordinating project timelines, and reporting to my research advisor, resulting in 5 completed capstone projects, and 1 completed NSF REU experience.</li>
+            </ul>
+
+        </div>
+
+        <div class="cv-card">
+
+            <h3>Graduate Teaching Assistant</h3>
+
+            <div class="cv-meta">
+                Department of Physics & Astronomy | 2018 - 2020
+            </div>
+
+            <ul>
+                <li>Instructed 100+ undergraduates across STEM laboratory courses and contributed to curriculum review modernizing lab materials and improving instructional clarity.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section class="cv-section">
+
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-box">
+                <h3>Programming</h3>
+
+                <p>
+                    Python, SQL, MATLAB, Bash, Git
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Data Science</h3>
+
+                <p>
+                    NumPy, pandas, SciPy, Statistical Analysis, Uncertainty Quantification
+                </p>
+            </div>
+
+            <div class="skill-box">
+                <h3>Astronomy</h3>
+
+                <p>
+                    Long-slit spectroscopy, Emission Line Fitting,
+                    Observational Astronomy,
+                    Kinematic Analysis
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Antoniu Fodor |
+            Design adapted from HTML5 UP
+        </p>
+
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
